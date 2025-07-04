@@ -1,11 +1,11 @@
-import React from "react";
-import Sidebar from "./components/Sidebar/Sidebar";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
   return (
-    <div>
-      <Sidebar />
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 
