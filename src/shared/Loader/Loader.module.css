@@ -9,7 +9,7 @@
     backdrop-filter: blur(10px);
 }
 
-/* Animasyon efekti için */
+/* Animasyon */
 .loaderContainer :global(.vortex-wrapper) {
     animation: fadeIn 0.5s ease-in;
     transform-origin: center center;
