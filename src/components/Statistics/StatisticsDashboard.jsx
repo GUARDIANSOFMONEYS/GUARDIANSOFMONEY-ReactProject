@@ -1,5 +1,3 @@
-// Meryem Aslan
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTransactionsSummary } from "../../redux/statistics/statisticsOperations";
@@ -31,6 +29,18 @@ const years = [
   { value: 2021, label: "2021" },
 ];
 
+const categories = [
+  { name: "Main expenses", color: "#ff6384" },
+  { name: "Products", color: "#36a2eb" },
+  { name: "Car", color: "#cc65fe" },
+  { name: "Self care", color: "#ffce56" },
+  { name: "Child care", color: "#8BC34A" },
+  { name: "Household products", color: "#FF9800" },
+  { name: "Education", color: "#00BCD4" },
+  { name: "Leisure", color: "#E91E63" },
+  { name: "Other expenses", color: "#9C27B0" },
+];
+
 const StatisticsDashboard = () => {
   const dispatch = useDispatch();
 
@@ -41,32 +51,73 @@ const StatisticsDashboard = () => {
   const loading = useSelector((state) => state.statistics.loading);
   const error = useSelector((state) => state.statistics.error);
 
+  const expenses = useSelector((state) => state.statistics.expenses);
+  const income = useSelector((state) => state.statistics.income);
+
   useEffect(() => {
     dispatch(fetchTransactionsSummary({ month, year }));
   }, [dispatch, month, year]);
 
-  // Örnek chart data (sonradan API verisiyle değiştireceğiz)
-  const chartData = {
-    labels: ["Eğitim", "Araba", "Yiyecek", "Diğer"],
-    datasets: [
-      {
-        data: [300, 50, 100, 150],
-        backgroundColor: ["#ff6384", "#36a2eb", "#cc65fe", "#ffce56"],
-        hoverBackgroundColor: [
-          "#ff6384cc",
-          "#36a2ebcc",
-          "#cc65fecc",
-          "#ffce56cc",
-        ],
-      },
-    ],
-  };
+  const chartData =
+    summary && summary.categories
+      ? (() => {
+          const allZero = summary.categories.every((c) => c.sum === 0);
+          return {
+            labels: summary.categories.map((c) => c.name),
+            datasets: [
+              {
+                data: allZero
+                  ? summary.categories.map(() => 1)
+                  : summary.categories.map((c) => c.sum),
+                backgroundColor: allZero
+                  ? summary.categories.map(() => "#cccccc")
+                  : summary.categories.map((c) => c.color),
+                hoverBackgroundColor: allZero
+                  ? summary.categories.map(() => "#bbbbbbcc")
+                  : summary.categories.map((c) => c.color + "cc"),
+              },
+            ],
+          };
+        })()
+      : null;
 
   return (
     <div>
+      <h2 className={styles.Statistics}>Statistics</h2>
       <div className={styles.selectContainer}>
         <CustomSelect value={month} onChange={setMonth} options={months} />
         <CustomSelect value={year} onChange={setYear} options={years} />
+      </div>
+
+      <div className={styles.categorySum}>
+        <h4 className={`${styles.categorySumh4} ${styles.Category}`}>
+          Category
+        </h4>
+        <h4 className={`${styles.categorySumh4} ${styles.Sum}`}>Sum</h4>
+      </div>
+
+      <div className={styles.categoryList}>
+        {categories.map(({ name, color }) => (
+          <div key={name} className={styles.categoryItem}>
+            <span
+              className={styles.colorBox}
+              style={{ backgroundColor: color }}
+            ></span>
+            <span>{name}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className={styles.accountContainer}>
+        <div className={styles.totalsContainer}>
+          <span className={styles.label}>Expenses:</span>
+          <span className={styles.valueExpenses}>{expenses || 0}</span>
+        </div>
+
+        <div className={styles.totalsContainer}>
+          <span className={styles.label}>Income:</span>
+          <span className={styles.valueIncome}>{income || 0}</span>
+        </div>
       </div>
 
       {loading && <p>Yükleniyor...</p>}
@@ -80,7 +131,23 @@ const StatisticsDashboard = () => {
       {summary && (
         <div>
           <h3>Toplam İşlem Tutarı: {summary.totalAmount}</h3>
-          <DoughnutChart data={chartData} />
+          <div className={styles.chartAndCategories}>
+            {chartData && <DoughnutChart data={chartData} />}
+
+            <div className={styles.categoryList}>
+              {summary.categories.map(({ name, sum, color }) => (
+                <div key={name} className={styles.categoryItem}>
+                  <span
+                    className={styles.colorBox}
+                    style={{ backgroundColor: color }}
+                  />
+                  <span>
+                    {name}: {sum}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
           <StatisticsTable data={summary} />
         </div>
       )}

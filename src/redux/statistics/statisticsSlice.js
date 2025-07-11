@@ -4,8 +4,6 @@ import { fetchTransactionsSummary } from "./statisticsOperations";
 
 // MERYEM ASLAN
 
-// src/redux/statistics/statisticsSlice.js
-
 const initialState = {
   summary: null,
   loading: false,
