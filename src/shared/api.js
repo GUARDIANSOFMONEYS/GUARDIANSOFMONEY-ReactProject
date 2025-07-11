@@ -1,8 +1,15 @@
-import React from "react";
 import axios from "axios";
 
-// Ortak kullanım bileşeni
-
-export const api = axios.create({
-  baseURL: `https://wallet.b.goit.study/api`,
+const api = axios.create({
+  baseURL: "https://wallet.b.goit.study/api",
 });
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default api;
