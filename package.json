@@ -10,6 +10,39 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+<<<<<<< Updated upstream
+    "react-router-dom": "^7.6.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "eslint": "^9.29.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.2.0",
+    "vite": "^7.0.0"
+=======
+    "react-router": "^7.6.3",
+    "react-router-dom": "^7.6.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "vite": "^7.0.4"
+>>>>>>> Stashed changes
+=======
     "@reduxjs/toolkit": "2.8.2",
     "axios": "1.10.0",
     "chart.js": "4.5.0",
@@ -40,5 +73,6 @@
     "eslint-plugin-react-refresh": "0.4.20",
     "globals": "16.3.0",
     "vite": "7.0.3"
+>>>>>>> 9c4ea624ab4bc05ae73d26749b36eb251986b511
   }
 }
