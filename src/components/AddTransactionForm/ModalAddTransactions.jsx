@@ -2,7 +2,7 @@ import Modal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./ModalAddTransactions.css";
 import { selectIsAddModalOpen, closeAddModal } from "../../shared/Modal/Modal";
-import AddTransactionForm from "../AddTransactionForm/AddTransactionForm";
+import Dashboard from "../Dashboard/Dashboard";
 
 Modal.setAppElement("#root");
 
@@ -37,7 +37,7 @@ function ModalAddTransaction() {
         </svg>
       </div>
       <h2>Add transaction</h2>
-      <AddTransactionForm />
+      <Dashboard />
     </Modal>
   );
 }
