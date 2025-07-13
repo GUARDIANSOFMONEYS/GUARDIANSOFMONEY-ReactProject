@@ -81,76 +81,84 @@ const StatisticsDashboard = () => {
         })()
       : null;
 
+  // console.log("chartData:", chartData);
+  // console.log("summary detayları:", summary);
+
   return (
-    <div>
-      <h2 className={styles.Statistics}>Statistics</h2>
-      <div className={styles.selectContainer}>
-        <CustomSelect value={month} onChange={setMonth} options={months} />
-        <CustomSelect value={year} onChange={setYear} options={years} />
+    <div className={styles.statisticsPage}>
+      <div className={styles.statisticsPageLeft}>
+        <button>deneme</button>
       </div>
-
-      <div className={styles.categorySum}>
-        <h4 className={`${styles.categorySumh4} ${styles.Category}`}>
-          Category
-        </h4>
-        <h4 className={`${styles.categorySumh4} ${styles.Sum}`}>Sum</h4>
-      </div>
-
-      <div className={styles.categoryList}>
-        {categories.map(({ name, color }) => (
-          <div key={name} className={styles.categoryItem}>
-            <span
-              className={styles.colorBox}
-              style={{ backgroundColor: color }}
-            ></span>
-            <span>{name}</span>
-          </div>
-        ))}
-      </div>
-
-      <div className={styles.accountContainer}>
-        <div className={styles.totalsContainer}>
-          <span className={styles.label}>Expenses:</span>
-          <span className={styles.valueExpenses}>{expenses || 0}</span>
+      <div className={styles.statisticPageRight}>
+        <h2 className={styles.Statistics}>Statistics</h2>
+        <div className={styles.selectContainer}>
+          <CustomSelect value={month} onChange={setMonth} options={months} />
+          <CustomSelect value={year} onChange={setYear} options={years} />
         </div>
 
-        <div className={styles.totalsContainer}>
-          <span className={styles.label}>Income:</span>
-          <span className={styles.valueIncome}>{income || 0}</span>
+        <div className={styles.categorySum}>
+          <h4 className={`${styles.categorySumh4} ${styles.Category}`}>
+            Category
+          </h4>
+          <h4 className={`${styles.categorySumh4} ${styles.Sum}`}>Sum</h4>
         </div>
-      </div>
 
-      {loading && <p>Yükleniyor...</p>}
-
-      {error && (
-        <p style={{ color: "red" }}>
-          Hata: {typeof error === "string" ? error : JSON.stringify(error)}
-        </p>
-      )}
-
-      {summary && (
-        <div>
-          <h3>Toplam İşlem Tutarı: {summary.totalAmount}</h3>
-          <div className={styles.chartAndCategories}>
-            {chartData && <DoughnutChart data={chartData} />}
-
-            <div className={styles.categoryList}>
-              {summary.categories.map(({ name, sum, color }) => (
-                <div key={name} className={styles.categoryItem}>
-                  <span
-                    className={styles.colorBox}
-                    style={{ backgroundColor: color }}
-                  />
-                  <span>
-                    {name}: {sum}
-                  </span>
-                </div>
-              ))}
+        <div className={styles.categoryList}>
+          {categories.map(({ name, color }) => (
+            <div key={name} className={styles.categoryItem}>
+              <span
+                className={styles.colorBox}
+                style={{ backgroundColor: color }}
+              ></span>
+              <span>{name}</span>
             </div>
-          </div>
-          <StatisticsTable data={summary} />
+          ))}
         </div>
-      )}
+
+        <div className={styles.accountContainer}>
+          <div className={styles.totalsContainer}>
+            <span className={styles.label}>Expenses:</span>
+            <span className={styles.valueExpenses}>{expenses || 0}</span>
+          </div>
+
+          <div className={styles.totalsContainer}>
+            <span className={styles.label}>Income:</span>
+            <span className={styles.valueIncome}>{income || 0}</span>
+          </div>
+        </div>
+
+        {loading && <p>Yükleniyor...</p>}
+
+        {error && (
+          <p style={{ color: "red" }}>
+            Hata: {typeof error === "string" ? error : JSON.stringify(error)}
+          </p>
+        )}
+
+        {summary && (
+          <div>
+            <h3>Toplam İşlem Tutarı: {summary.totalAmount}</h3>
+            <div className={styles.chartAndCategories}>
+              {chartData && <DoughnutChart data={chartData} />}
+
+              <div className={styles.categoryList}>
+                {summary.categories.map(({ name, sum, color }) => (
+                  <div key={name} className={styles.categoryItem}>
+                    <span
+                      className={styles.colorBox}
+                      style={{ backgroundColor: color }}
+                    />
+                    <span>
+                      {name}: {sum}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <StatisticsTable data={summary} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
 
   background: linear-gradient(180deg, #6441A5 0%, #2A0845 0%);
   background-repeat: no-repeat;

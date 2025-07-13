@@ -6,9 +6,24 @@
     justify-content: flex-end;
 }
 
+.statisticsPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.statisticsPageLeft {
+    width: 40%;
+}
+
+.statisticPageRight  {
+    width: 60%;
+}
+
 .Statistics {
+    text-align: start;
     color: white;
-    margin-right: 70px;
+    padding-left: 80px;
 }
 
 .categorySum {
@@ -86,7 +101,6 @@
     
 .valueExpenses {
     color: #FF868D;
-
 }
 
 .valueIncome {
@@ -97,21 +111,18 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    /* Grafik ve liste arası boşluk */
 }
 
 .categoryList {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    /* Kategori öğeleri arasındaki boşluk */
 }
 
 .categoryItem {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Renk kutusu ile isim arası boşluk */
     font-weight: 500;
     color: white;
 }
@@ -119,5 +130,6 @@
 .colorBox {
     width: 15px;
     height: 15px;
-    border-radius: 3px; }
-    
+    border-radius: 3px; 
+}
+
