@@ -87,7 +87,9 @@ const Header = () => {
           <div className="header-content">
             {/* Logo ve Marka */}
             <div className="logo-section">
-              <Logo />
+              {/* <Logo /> */}
+              <img src={Logo} alt="Logo" />
+
               <h1 className="brand-title">Money Guard</h1>
             </div>
 
@@ -107,7 +109,8 @@ const Header = () => {
                 className="logout-button"
                 type="button"
               >
-                <ExitIcon />
+                {/* <ExitIcon /> */}
+                <img src={ExitIcon} alt="Exit" />
                 <span className="logout-text">Çıkış</span>
               </button>
             </div>
