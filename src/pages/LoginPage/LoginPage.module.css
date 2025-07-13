@@ -1,0 +1,32 @@
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  
+
+  background: linear-gradient(to left top, #6d1c77, #542167, #3f2155, #2d1e41, #1f192d, #211a2e, #221c2e, #241d2f, #382545, #512b59, #6e2e6b, #8e2e79);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  min-width: 100%; /* istediğin gibi büyüt/küçült */
+  height: 120%;
+  background-image: url('/coins.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* veya cover */
+  opacity: 0.15; /* 🔧 Opacity kontrolü */
+  z-index: 0;
+}
+
+.formContainer {
+  position: relative;
+  z-index: 2;
+}

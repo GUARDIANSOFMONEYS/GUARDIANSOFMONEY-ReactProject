@@ -1,0 +1,58 @@
+.form {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 32px;
+  color: white;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formContact{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 4px;
+  gap: 10px;
+}
+
+.inputWrapper input {
+  background: transparent;
+  border: none;
+  color: white;
+  flex: 1;
+  outline: none;
+}
+
+.loginBtn {
+  padding: 12px;
+  margin-top: 12px;
+  background: linear-gradient(to right, #f2b63c, #a75ee3);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.registerLink {
+  text-align: center;
+  margin-top: 10px;
+  background: white;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
