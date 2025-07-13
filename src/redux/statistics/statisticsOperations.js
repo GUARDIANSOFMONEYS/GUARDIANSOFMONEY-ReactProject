@@ -1,9 +1,20 @@
-import React from "react";
+// Meryem Aslan
 
-// MERYEM ASLAN
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import api from "../../shared/api";
 
-const statisticsOperations = () => {
-  return <div></div>;
-};
-
-export default statisticsOperations;
+export const fetchTransactionsSummary = createAsyncThunk(
+  "statistics/fetchTransactionsSummary",
+  async ({ month, year }, { rejectWithValue }) => {
+    try {
+      const response = await api.get(`/transactions-summary`, {
+        params: { month, year },
+      });
+      console.log("API response:", response.data);
+      return response.data;
+    } catch (error) {
+      console.error("API error:", error);
+      return rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);

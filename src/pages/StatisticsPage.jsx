@@ -1,9 +1,14 @@
-import React from "react";
-
 // MERYEM ASLAN + ÖZGEN GÜLER
 
+import React from "react";
+import Statistics from "../components/Statistics/Statistics";
+
 const StatisticsPage = () => {
-  return <div></div>;
+  return (
+    <main>
+      <Statistics />
+    </main>
+  );
 };
 
 export default StatisticsPage;
