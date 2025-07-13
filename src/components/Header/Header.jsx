@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Logo from "../assets/TabletLogo.png";
-import ExitIcon from "../assets/exit1.svg";
-import './Header.css'; 
+import Logo from "../../assest/logo.png";
+import ExitIcon from "../../assest/exit1.png";
+import "./Header.css";
 
 
 
