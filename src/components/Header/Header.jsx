@@ -3,23 +3,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../Logo/лого Money Guard 2 (1).png";
 import ExitIcon from "../../Logo/exit1.png";
-import "./Header.module.css";
+import css from "./Header.module.css";
 
 const LogoutModal = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <h3 className="modal-title">Çıkış Yapmak İstiyor Musunuz?</h3>
-        <p className="modal-description">
+    <div className={css.modaloverlay}>
+      <div className={css.modalcontent}>
+        <h3 className={css.modaltitle}>Çıkış Yapmak İstiyor Musunuz?</h3>
+        <p className={css.modaldescription}>
           Hesabınızdan çıkış yapmak istediğinizden emin misiniz?
         </p>
-        <div className="modal-buttons">
-          <button onClick={onClose} className="modal-button cancel-button">
+        <div className={css.modalbuttons}>
+          <button onClick={onClose} className={css.modalbutton}>
             İptal
           </button>
-          <button onClick={onConfirm} className="modal-button confirm-button">
+          <button onClick={onConfirm} className={css.modalbutton}>
             Çıkış Yap
           </button>
         </div>
@@ -82,36 +82,36 @@ const Header = () => {
 
   return (
     <>
-      <header className="header">
-        <div className="header-container">
-          <div className="header-content">
+      <header className={css.header}>
+        <div className={css.header_container}>
+          <div className={css.header_content}>
             {/* Logo ve Marka */}
-            <div className="logo-section">
+            <div className={css.logo_section}>
               {/* <Logo /> */}
               <img src={Logo} alt="Logo" />
 
-              <h1 className="brand-title">Money Guard</h1>
+              <h1 className={css.brand_title}>Money Guard</h1>
             </div>
 
             {/* Kullanıcı Bilgileri ve Çıkış */}
-            <div className="user-section">
+            <div className={css.user_section}>
               {/* Kullanıcı Adı */}
-              <div className="user-info">
-                <span className="username">{getUserName(userEmail)}</span>
+              <div className={css.user_info}>
+                <span className={css.username}>{getUserName(userEmail)}</span>
               </div>
 
               {/* Ayırıcı Çizgi */}
-              <div className="divider"></div>
+              <div className={css.divider}></div>
 
               {/* Çıkış Butonu */}
               <button
                 onClick={handleLogoutClick}
-                className="logout-button"
+                className={css.logout_button}
                 type="button"
               >
                 {/* <ExitIcon /> */}
                 <img src={ExitIcon} alt="Exit" />
-                <span className="logout-text">Çıkış</span>
+                <span className={css.logou_text}>Exit</span>
               </button>
             </div>
           </div>

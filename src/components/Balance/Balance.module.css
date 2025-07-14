@@ -1,6 +1,7 @@
 .balancedCard {
   background-color: #523b7e99;
-  /* height: 80px; */
+  height: 80px;
+  width: 480px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,6 +9,7 @@
   box-shadow: 1px 9px 15px 0px #00000033;
   padding: 8px 0 11px 56px;
   gap: 12px;
+  margin-bottom: 32px;
 }
 
 .balancedText {

@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  width: 100%;
+  width: 480px;
   display: flex;
   flex-direction: column;
   background-color: #17158a00;

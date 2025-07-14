@@ -1,9 +1,9 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* #root {
+   max-width: 1280px; 
+   margin: 0 auto; 
+   padding: 2rem; 
+   text-align: center; 
+} */
 
 .logo {
   height: 6em;
@@ -39,4 +39,49 @@
 
 .read-the-docs {
   color: #888;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  min-height: 100vh;
+
+  background: linear-gradient(180deg, #6441a5 0%, #2a0845 0%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 60%;
+  transform: translateX(-60%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle at top right,
+    rgba(0, 0, 0, 0.9),
+    transparent 80%
+  );
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #6d54eb, #652392);
+  border-radius: 30%;
+  opacity: 0.2;
+  filter: blur(90px);
+  z-index: 0;
+  pointer-events: none;
 }
