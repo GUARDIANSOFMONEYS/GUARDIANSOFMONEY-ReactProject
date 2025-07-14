@@ -6,7 +6,7 @@
   "homepage": "https://guardiansofmoneys.github.io/GUARDIANSOFMONEY-ReactProject/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=GUARDIANSOFMONEY-ReactProject",
+    "build": "vite build --base=/GUARDIANSOFMONEY-ReactProject/ && cp ./dist/index.html ./dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
