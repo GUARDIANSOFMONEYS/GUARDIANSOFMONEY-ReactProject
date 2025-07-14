@@ -1,9 +1,9 @@
 {
-  "name": "goitreactp",
+  "name": "guardiansofmoney",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://berkangor.github.io/goitreactp",
+  "homepage":"https://berkangor.github.io/GUARDIANSOFMONEY-ReactProject/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

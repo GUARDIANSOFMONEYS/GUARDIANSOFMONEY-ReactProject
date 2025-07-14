@@ -1,8 +1,45 @@
-# React + Vite
+Money Guard - React Project
+Kişisel harcamaları takip etmek için geliştirilmiş modern bir finans yönetimi uygulamasıdır.
+Bu proje React, Redux Toolkit ve Vite ile geliştirilmiştir.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Guardians of Money, kişisel finans yönetimini kolaylaştırmak için geliştirilmiş modern bir uygulamadır.​
 
-Currently, two official plugins are available:
+Uygulama:​
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Gelir ve giderleri sade bir arayüzle takip etmenizi sağlar​
+
+Canlı döviz kuru verilerini gösterir ve önbelleğe alarak verimli çalışır​
+
+Grafikler ve tablolarla finansal farkındalık yaratır​
+
+Tüm cihazlara duyarlı tasarımıyla her yerden erişilebilir​
+
+​
+
+ÖZELLİKLER
+
+Kullanıcı girişi ve kaydı
+Gelir ve gider takibi
+Döviz kuru görüntüleme
+Harcamalara göre grafikler
+Gerçek zamanlı form doğrulama
+
+KATILIMCILAR
+
+Yuşa Sağlam - Login / Register
+Aysun Bekdemir - Header
+Meryem Aslan - Statistics Table
+Furkan ThechlifEn - Dashboard
+Berkan Görmüş - Currency
+Özgen Güler - Balance / Statistics / Home
+Ahmet Talha Kaplan - AddTransactionForm
+Kullanılan Teknolojiler
+React
+Vite
+Redux Toolkit
+React Router
+React Hook Form + Yup
+Axios
+Click UI Kit (tasarım sistemi)
+Chart.js
+DatePicker
