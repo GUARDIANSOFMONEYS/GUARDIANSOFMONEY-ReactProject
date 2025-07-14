@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://berkangor.github.io/GUARDIANSOFMONEY-ReactProject/",
+  "homepage":"https://berkangor.github.io/guardiansofmoney-reactproject/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
