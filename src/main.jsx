@@ -7,7 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store'; // store ve persistor'u import et
 import { BrowserRouter } from 'react-router-dom';
 
-const basename = window.location.hostname.includes('github.io') ? '/guardiansofmoney-reactproject' : '/';
+const basename = window.location.hostname.includes('github.io') ? '/GUARDIANSOFMONEY-ReactProject' : '/';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
